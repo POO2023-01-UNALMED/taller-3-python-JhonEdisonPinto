@@ -2,6 +2,10 @@ class Control:
     def __init__(self):
         self._tv = None
 
+    def enlazar(self, tv):
+        self.tv = tv
+        tv.setControl(self)
+
     def setTV(self, tv):
         self.tv = tv
 
@@ -36,6 +40,3 @@ class Control:
         if self.tv:
             self.tv.setCanal(canal)
 
-    def enlazar(self, tv):
-        self.tv = tv
-        tv.setControl(self)
