@@ -11,61 +11,61 @@ class TV:
         TV.numTV += 1
 
     def setMarca(self, marca):
-        self.marca = marca
+        self._marca = marca
 
     def setControl(self, control):
-        self.control = control
+        self._control = control
 
     def setPrecio(self, precio):
-        self.precio = precio
+        self._precio = precio
 
     def setVolumen(self, volumen):
-        if self.estado and 0 <= volumen <= 7:
-            self.volumen = volumen
+        if self._estado and 0 <= volumen <= 7:
+            self._volumen = volumen
 
     def setCanal(self, canal):
-        if self.estado and 1 <= canal <= 120:
-            self.canal = canal
+        if self._estado and 1 <= canal <= 120:
+            self._canal = canal
 
     def getMarca(self):
-        return self.marca
+        return self._marca
 
     def getControl(self):
-        return self.control
+        return self._control
 
     def getPrecio(self):
-        return self.precio
+        return self._precio
 
     def getVolumen(self):
-        return self.volumen
+        return self._volumen
 
     def getCanal(self):
-        return self.canal
+        return self._canal
 
     def turnOn(self):
-        self.estado = True
+        self._estado = True
 
     def turnOff(self):
-        self.estado = False
+        self._estado = False
 
     def getEstado(self):
-        return self.estado
+        return self._estado
 
     def canalUp(self):
-        if self.estado and self.canal < 120:
-            self.canal += 1
+        if self._estado and self._canal < 120:
+            self._canal += 1
 
     def canalDown(self):
-        if self.estado and self.canal > 1:
-            self.canal -= 1
+        if self._estado and self._canal > 1:
+            self._canal -= 1
 
     def volumenUp(self):
-        if self.estado and self.volumen < 7:
-            self.volumen += 1
+        if self._estado and self._volumen < 7:
+            self._volumen += 1
 
     def volumenDown(self):
-        if self.estado and self.volumen > 0:
-            self.volumen -= 1
+        if self._estado and self._volumen > 0:
+            self._volumen -= 1
     @classmethod
     def getNumTV(cls):
         return cls.numTV
